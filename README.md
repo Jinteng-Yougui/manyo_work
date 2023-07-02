@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+There are four tables for this app.
 
-Things you may want to cover:
+First table is for "user", which is the name of this model. It has each task's 'title: string', 'content: text', 'deadline: date', 'priority: string', 'status: string' and 'label: string.
 
-* Ruby version
+Second table is for tasks' "search", which is the name of this model. It has each task's 'title: string', 'deadline: date' and 'priority: string'.
 
-* System dependencies
+Third table is for tasks' "sort", which is the name of this model. It has each task's 'deadline: date' and 'priority: string'.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Forth table is for tasks' "label", which is the name of this model. It has each task's 'title: string' and 'genre: string".
