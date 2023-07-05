@@ -1,5 +1,5 @@
-<%= form_with(model: @task, local: true ,url: choose_new_or_edit ) do |form| %>
-  <% if task.errors.any? %>
+<%= form_with(model: @task, local: true ) do |form| %>
+  <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %>個のエラーがあります。</h2>
 
@@ -24,3 +24,5 @@
     <%= form.submit :登録 %>
   </div>
 <% end %>
+
+<%= link_to "タスク一覧に戻る", tasks_path %>

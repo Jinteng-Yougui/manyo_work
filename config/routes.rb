@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root "tasks#index"
-  resources :blogs do
+  resources :tasks do
     collection do
-      post :confirm
+    post :confirm
     end
   end
 end

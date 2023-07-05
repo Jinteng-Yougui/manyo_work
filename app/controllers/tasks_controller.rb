@@ -10,30 +10,23 @@ before_action :set_task, only:%i[ show edit update destroy ]
   end
 
   def create
-    @task = current_user.tasks.build(task_params)
-    if params[:back]
+    @task= Task.new(task_params)
+		if params[:back]
       render :new
-    else
-      if @task.save
-        redirect_to tasks_path, notice: "タスクの登録が完了しました。"
-      else
-        render :new
-      end
+	  else
+		  if @task.save
+        redirect_to tasks_path, notice: "タスクの登録が完了しました！"
+		  else
+       render :new
+		  end
     end
-  end
+	end
 
-  def show
-    @task = Task.find(params[:id])
+  def show 
   end
 
   def edit
     @task = Task.find(params[:id])
-    if @task.user == current_user
-      render :edit
-    else
-      flash[:notice]= "権限がありません。"
-      redirect_to tasks_path
-    end
   end
 
   def update
@@ -51,15 +44,7 @@ before_action :set_task, only:%i[ show edit update destroy ]
   end
 
   def confirm
-    @task = current_user.tasks.build(task_params)
-    render :new if @task.invalid?
-  end
-
-  def ensure_current_user
-    if @current_user.id != prams[:id].to_i
-      flash[:notice]= "権限がありません。"
-      redirect_to user_path(@user.id)
-    end
+    @task = Task.new(task_params)
   end
 
   private
