@@ -15,7 +15,8 @@ before_action :set_task, only:%i[ show edit update destroy ]
       render :new
 	  else
 		  if @task.save
-        redirect_to tasks_path, notice: "タスクの登録が完了しました！"
+        flash[:notice] = "タスクの登録が完了しました！"
+        redirect_to tasks_path
 		  else
        render :new
 		  end
@@ -32,7 +33,8 @@ before_action :set_task, only:%i[ show edit update destroy ]
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to task_path, notice: "編集しました。"
+      flash[:notice] = "編集しました。"
+      redirect_to task_path
     else
       render :edit
     end
@@ -40,7 +42,8 @@ before_action :set_task, only:%i[ show edit update destroy ]
 
   def destroy
     @task.destroy
-    redirect_to task_path, notice: "削除しました。"
+    flash[:notice] = "削除しました。"
+    redirect_to tasks_path
   end
 
   def confirm
