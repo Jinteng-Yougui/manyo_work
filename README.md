@@ -2,9 +2,9 @@
 
 There are four tables for this app.
 
-First table is for "user", which is the name of this model. It has each task's 'title: string', 'content: text', 'deadline: date', 'priority: string', 'status: string' and 'label: string.
+First table is for "task", which is the name of this model. It has each task's 'title: string', 'content: text', 'deadline: date', 'priority: string', 'status: string' and 'label: string.
 
-"user"
+"task"
 | column   | data type |
 | -------- | --------- | 
 | title    | string    | 
